@@ -60,4 +60,5 @@ const NecessaryWebsite = [
     },
     
 ]
+
  export {headOfDetails, NecessaryWebsite}
