@@ -195,14 +195,13 @@ const Other = [
 </script>
 
 <template>
-    <section class="box-item-section">
-        <div class="row ">
-            <!-- v-for -->
-            <div class="col-md-6 my-4" v-for="(OhterWork, index) in Other" :key="index" >
+    <section class="box-item-section ">
+        <div class="row "> 
+            <div class="col-md-12 " v-for="(OtherWork, index) in Other" :key="index" >
                 <div class="box-container">
                     <div class="row">
                         <div class="col-md-12 headingPart">
-                            <h4 class="text-green font-weight-bold">{{ OhterWork.heading }}</h4> 
+                            <h4 class="text-green font-weight-bold text-capitalize">{{ OtherWork.heading }}</h4> 
                         </div>
                     <hr>
                     </div>
@@ -210,12 +209,12 @@ const Other = [
                         <div class="mb-3" >
                             <div class="row g-0" >
                                 <div class="col-md-4">
-                                    <img :src="OhterWork.boxContentDoc.image" class="img-fluid rounded-start" alt="...">
+                                    <img :src="OtherWork.boxContentDoc.image" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8 ">
                                     <div class="box-content">
                                         <ul class="list-unstyled">
-                                            <li v-for="(linkAndText, index) in OhterWork.boxContentDoc.linkAndContent" :key="index">
+                                            <li v-for="(linkAndText, index) in OtherWork.boxContentDoc.linkAndContent" :key="index">
                                                 <a :href="linkAndText.link" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" ><i class="fa fa-caret-right"></i><span class="boxItemLink">{{ linkAndText.text }} </span></a>
                                             </li>
                                         </ul>
@@ -232,24 +231,20 @@ const Other = [
 </template>
 
 <style scoped>
-.box-item-section{
-    margin-top: -20px;
-}
 .box-item-section .box-container{
     border: 1px solid #efefef;
     border-top: 5px solid #efefef;
     background: linear-gradient(to bottom, #ffffff 0%, #ebebeb 100%);
-    padding: 15px;
+    padding: 1px 14px ;
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .box-content{
     margin-left: 15px;
+    font-size: 12px;
 }
 .headingPart{
-    background: #00000025;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    background: #00000025; 
 }
 .boxItemLink{
     margin-left: 7px;

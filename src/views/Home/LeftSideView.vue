@@ -9,7 +9,7 @@ import {headOfDetails, NecessaryWebsite} from '../../../data/data'
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 rightSideBg">
-                <h2 class="fs-4 text-center py-2 bg-success rounded">Head Teacher List</h2>
+                <h2 class="fs-4 text-center py-2 bg-success rounded">Head of Teacher List</h2>
                 <div class="overflow-auto teacherDetalisHeight " >
                     <template v-for="(teacherDetails, index) in headOfDetails" :key="index" >
                         <div class="card headTeacherList mx-auto my-3  shadow bg-body-tertiary rounded">

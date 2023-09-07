@@ -5,7 +5,7 @@ const headOfDetails = [
          image: 'https://img.freepik.com/free-photo/positive-overjoyed-dark-skinned-man-points-with-both-index-fingers-hints-something-wears-casual-green-jumper-smiles-broadly_273609-23582.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
          name: 'Parveen Anwara',
          appellation: 'head teacher',
-         massage: 'Our only wish is that everyone should study well...'
+         massage: 'Our only wish is that everyone should study well '
      }
     },
     {
