@@ -191,20 +191,21 @@
     dropDown: [
       {
         name: `Administrator`,
-        link: `/`
+        link: `/login/administrator`
       },
       {
         name: `Teachers`,
-        link: `/`
-      },
-      {
-        name: `Students`,
-        link: `/`
+        link: `/login/teachers`
       },
       {
         name: `Parents`,
-        link: `/`
+        link: `/login/parents`
       },
+      {
+        name: `Students`,
+        link: `/login/students`
+      },
+      
       
     ]
   },

@@ -10,6 +10,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+    
     // About All Page Call
     {
       path: '/about/principal',
@@ -26,6 +27,7 @@ const router = createRouter({
       name: 'institure', 
       component: () => import('../views/About/Institute.vue')
     },
+
     // Student All Page Call
     {
       path: '/student/class-result',
@@ -62,6 +64,7 @@ const router = createRouter({
       name: 'school-dress', 
       component: () => import('../views/Student/SchoolDress.vue')
     },
+
     // Admission All Page Call
     {
       path: '/admission/admission-information',
@@ -83,6 +86,7 @@ const router = createRouter({
       name: 'subjects', 
       component: () => import('../views/Admission/Subjects.vue')
     },
+
     // Result All Page Call
     {
       path: '/results/best-of-board',
@@ -114,7 +118,7 @@ const router = createRouter({
       name: 'ssc-results', 
       component: () => import('../views/Results/Previous Result/SSC.vue')
     },
-    
+
 // All List Call
     {
       path: '/lists/employee',
@@ -131,12 +135,14 @@ const router = createRouter({
       name: 'teachers', 
       component: () => import('../views/Lists/Teachers.vue')
     },
+
     // Contact All Page Call
     {
       path: '/contact/contact-us',
       name: 'contact-us', 
       component: () => import('../views/Contact Us/Contact Us.vue')
     },
+
     // MPO All Page Call
     {
       path: '/mpo/inventory-management',
@@ -153,6 +159,7 @@ const router = createRouter({
       name: 'online-application', 
       component: () => import('../views/Mpo/Online Application.vue')
     },
+
     // Gallery All Page Call
     {
       path: '/gallery/photo-gallery',
@@ -164,18 +171,36 @@ const router = createRouter({
       name: 'video-gallery', 
       component: () => import('../views/Gallery/Video Gallery.vue')
     },
+
     // Login All Page Call
-    // {
-    //   path: '/login/subjects',
-    //   name: 'subjects', 
-    //   component: () => import('../views/Login/Subjects.vue')
-    // },
+    {
+      path: '/login/administrator',
+      name: 'administrator', 
+      component: () => import('../views/Login/Administrator.vue')
+    },
+    {
+      path: '/login/parents',
+      name: 'parents', 
+      component: () => import('../views/Login/Parents.vue')
+    },
+    {
+      path: '/login/students',
+      name: 'students', 
+      component: () => import('../views/Login/Students.vue')
+    },
+    {
+      path: '/login/teachers',
+      name: 'teachers', 
+      component: () => import('../views/Login/Teachers.vue')
+    },
+    // Sign UP Page Call
+    {
+      path: '/signup',
+      name: 'signup',
+      component: ()=> import('../views/SignUpView.vue')
+    },
     
-    
-
-
-
-    
+    // 404 Not Found Page
     { 
       path: '/:pathMatch(.*)*', 
       name: 'NotFound', 
