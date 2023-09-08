@@ -4,13 +4,23 @@
         two: 'https://cdn.pixabay.com/photo/2023/08/14/15/42/milkyway-8190232_1280.jpg',
         three: 'https://cdn.pixabay.com/photo/2023/08/27/08/20/hiking-8216486_1280.jpg'
         }
+const currentDate = new Date()
 </script>
 
 <template>
     <!-- Carosul Item All -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 position-relative">
+        <div class="currentDate d-flex justify-content-between">
+          <h4 class=" ms-2">Date: {{ currentDate.toLocaleDateString() }}</h4>
+          <div class="d-flex">
+            <i class="fa-brands fa-facebook iconColor"></i>
+            <i class="fa-brands fa-twitter iconColor"></i>
+            <i class="fa-brands fa-square-google-plus iconColor"></i>
+            <i class="fa-brands fa-youtube iconColor"></i>
+          </div>
+        </div>
         <div id="carouselExampleCaptions" class="carousel slide">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -56,6 +66,21 @@
 
 <style scoped>
 .carosulImageHeight{
-  height: 25rem;
+  height: 25rem; 
+}
+.currentDate{
+  position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000000ad;
+    width: 100%;
+    color: white;
+    box-shadow: 0px 2px 3px 0px indigo;
+}
+.iconColor{
+    color: #3e9aff;
+    font-size: 28px;
+    margin: 3px 11px 0px 0px;
 }
 </style>

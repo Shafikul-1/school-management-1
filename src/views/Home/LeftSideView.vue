@@ -6,7 +6,7 @@ import {headOfDetails, NecessaryWebsite} from '../../../data/data'
 
 <template>
 <!-- Head Teacher Detalis -->
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <div class="row">
             <div class="col-md-12 rightSideBg">
                 <h2 class="fs-4 text-center py-2 bg-success rounded">Head of Teacher List</h2>
@@ -89,7 +89,7 @@ import {headOfDetails, NecessaryWebsite} from '../../../data/data'
             <div class="col-md-12 rightSideBg">
                 <h2 class="fs-4 text-center text-capitalize py-2 bg-success rounded">Our location on the map</h2>
                 <div class="">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1732.5483641246735!2d88.78583226674353!3d24.914688961177074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fc8127a7c91887%3A0x17a18469721858be!2z4Kas4KaV4Ka-4Kaq4KeB4KawIOCmuOCmsOCmleCmvuCmsOCmvyDgpqrgp43gprDgpr7gpqXgpq7gpr_gppUg4Kas4Ka_4Kam4KeN4Kav4Ka-4Kay4Kef!5e0!3m2!1sen!2sbd!4v1694023569241!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1732.5483641246735!2d88.78583226674353!3d24.914688961177074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fc8127a7c91887%3A0x17a18469721858be!2z4Kas4KaV4Ka-4Kaq4KeB4KawIOCmuOCmsOCmleCmvuCmsOCmvyDgpqrgp43gprDgpr7gpqXgpq7gpr_gppUg4Kas4Ka_4Kam4KeN4Kav4Ka-4Kay4Kef!5e0!3m2!1sen!2sbd!4v1694023569241!5m2!1sen!2sbd" class="mapStyle" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -123,5 +123,9 @@ import {headOfDetails, NecessaryWebsite} from '../../../data/data'
     margin-left: 9px;
     rotate: 329deg;
     font-size: 19px;
+}
+.mapStyle{
+    width: 100%;
+    height: 263px !important;
 }
 </style>
