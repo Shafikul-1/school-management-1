@@ -7,7 +7,7 @@ import Footer from '../../components/Footer.vue';
 
 const govorningDetalis = [
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/21.jpg',
     title: 'Card title',
     subtitle: 'Subtitle',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -25,7 +25,7 @@ const govorningDetalis = [
 
   },
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/28.jpg',
     title: 'Card title',
     subtitle: 'Sub title',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -43,7 +43,7 @@ const govorningDetalis = [
 
   },
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/77.jpg',
     title: 'Card title',
     subtitle: '',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -61,7 +61,7 @@ const govorningDetalis = [
 
   },
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/78.jpg',
     title: 'Card title',
     subtitle: '',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -79,7 +79,7 @@ const govorningDetalis = [
 
   },
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/72.jpg',
     title: 'Card title',
     subtitle: '',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -97,7 +97,7 @@ const govorningDetalis = [
 
   },
   {
-    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    image: 'https://randomuser.me/api/portraits/women/38.jpg',
     title: 'Card title',
     subtitle: '',
     detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
