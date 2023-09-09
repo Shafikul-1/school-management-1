@@ -4,6 +4,119 @@ import Navbar from '../../components/Navbar.vue';
 import LeftSideView from '../Home/LeftSideView.vue';
 import RightSideView from '../Home/RightSideView.vue';
 import Footer from '../../components/Footer.vue';
+
+const govorningDetalis = [
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: 'Subtitle',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: 'Sub title',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: '',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: '',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: '',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  {
+    image: 'https://i.imgur.com/ZTkt4I5.jpg',
+    title: 'Card title',
+    subtitle: '',
+    detalis: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    linkAll: [
+      {
+        linkText: '+8801756867220',
+        icon: 'fa fa-mobile',
+      },
+      {
+        linkText: 'shafikul@gamil.com',
+        icon: 'fa fa-envelope-o'
+      },
+
+    ]
+
+  },
+  
+]
+
 </script>
 
 <template>
@@ -35,7 +148,26 @@ import Footer from '../../components/Footer.vue';
 <!-- All Work Start -->
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12"></div>
+            <div class="col-md-12">
+                <div class="container mx-auto mt-4">
+                  <div class="row">
+                    <div class="col-md-6" v-for="(allDetalis, index) in govorningDetalis" :key="index">
+                      <div class="card">
+                        <img :src="allDetalis.image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ allDetalis.title }}</h5>
+                          <h6 class="card-subtitle mb-2">{{ allDetalis.subtitle }}</h6>
+                          <p class="card-text">{{ allDetalis.detalis.split(' ').slice(0, 10).join(' ') }} ....</p>
+                          <hr>
+                          <div class="" v-for="(detalisLink, index) in allDetalis.linkAll" :key="index">
+                            <RouterLink to="/" class="btn mr-2"><i :class="detalisLink.icon"></i> {{ detalisLink.linkText }}</RouterLink> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -53,5 +185,39 @@ import Footer from '../../components/Footer.vue';
 <style scoped>
 .designLine{
   font-size: 3rem;
+}
+:root {
+  --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+}
+
+body {
+  background: #111 !important;
+}
+
+.card {
+  background: #222;
+  border: 1px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  border: 5px solid;
+  border-image-slice: 1;
+  background: var(--gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: #71f086 !important;
+  border-image-source:  var(--gradient) !important; 
+  text-decoration: none;
+  transition: all .4s ease;
+}
+
+.btn:hover, .btn:focus {
+      background: var(--gradient) !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 5px solid #fff !important; 
+  box-shadow: #222 1px 0 10px;
+  text-decoration: underline;
 }
 </style>
