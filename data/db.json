@@ -1,9 +1,8 @@
 {
     "headOfDetails": [
       {
-        "id": 1,
-        "sirDetails": {
-           
+            "id": 1,
+            "sirDetails": {
             "image": "https://img.freepik.com/free-photo/positive-overjoyed-dark-skinned-man-points-with-both-index-fingers-hints-something-wears-casual-green-jumper-smiles-broadly_273609-23582.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph",
             "name": "Parveen Anwara",
             "appellation": "head teacher",
@@ -11,8 +10,8 @@
         }
        },
        {
-        "id": 2,
-        "sirDetails": {
+            "id": 2,
+            "sirDetails": {
             "image": "https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph",
             "name": "Kaif Joynal",
             "appellation": "assistent head teacher",
@@ -20,8 +19,8 @@
         }
        },
        {
-        "id": 3,
-        "sirDetails": {
+            "id": 3,
+            "sirDetails": {
             "image": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph",
             "name": "Islam Saeed",
             "appellation": "chairman teacher",
@@ -29,8 +28,8 @@
         }
        },
        {
-        "id": 4,
-        "sirDetails": {
+            "id": 4,
+            "sirDetails": {
             "image": "https://img.freepik.com/free-photo/handsome-businessman-suit-glasses-cross-arms-chest-look_176420-21750.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph",
             "name": "Moktar Atiqur",
             "appellation": "head of deparment teacher",
@@ -38,38 +37,42 @@
         }
        }
     ],
+
+
     "NecessaryWebsite": [
       {
-        "id":1,
+          "id":1,
           "name": "Ministry of Education",
           "link": "http://www.moedu.gov.bd/"
       },
       {
-        "id":2,
+          "id":2,
           "name": "Department of Technical and Madrasa Education",
           "link": "http://www.tmed.gov.bd/"
       },
       {
-        "id":3,
+          "id":3,
           "name": "Directorate of Madrasa Education",
           "link": "http://www.dme.gov.bd/"
       },
       {
-        "id":4,
+          "id":4,
           "name": "Bangladesh Madrasa Education Board",
           "link": "https://www.bmeb.gov.bd/"
       },
       {
-        "id":4,
+          "id":4,
           "name": "Bangladesh Madrasa Teacher Training Institute",
           "link": "http://www.bmtti.gov.bd/"
       },
       {
-        "id":6,
+          "id":6,
           "name": "Prime Ministers Educational Assistance Trust",
           "link": "http://www.pmeat.gov.bd/"
       }
     ],
+
+
     "latest-news":[
       {
         "id":1,
@@ -77,6 +80,131 @@
         "heading": "Guardians Monthly Meeting Schdulle",
         "paragrape": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
+      }
+    ],
+    
+
+
+    "allreotren": [
+      {
+        "id": 1,
+        "className": "Class name one",
+        "toggle": true,
+        "classRotine": [
+          {
+            "dayName": "sunday",
+            "subjectAndTime": [
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "className": "Class name one",
+        "toggle": true,
+        "classRotine": [
+          {
+            "dayName": "sunday",
+            "subjectAndTime": [
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "className": "Class name one",
+        "toggle": true,
+        "classRotine": [
+          {
+            "dayName": "sunday",
+            "subjectAndTime": [
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              },
+              {
+                "name": "englilsh",
+                "time": "11-01"
+              }
+            ]
+          }
+        ]
       }
     ]
 }

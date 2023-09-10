@@ -5,6 +5,24 @@ import Navbar from '../../components/Navbar.vue';
 import LeftSideView from '../Home/LeftSideView.vue';
 import RightSideView from '../Home/RightSideView.vue';
 import Footer from '../../components/Footer.vue';
+import axios from 'axios';
+
+// let allReotren = reactive([])
+// async function alldata(){
+//   try {
+//     let url = 'http://localhost:3000/allreotren'
+//     let res = await axios.get(url)
+//     console.log(res.data)
+//     allReotren = res.data.data
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+// alldata()
+// console.log( 'al data =>' + allReotren)
+
+
+
 
 
 const allReotren = reactive([
