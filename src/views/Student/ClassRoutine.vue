@@ -1,12 +1,133 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import Slider from '../../components/Slider.vue';
 import Navbar from '../../components/Navbar.vue';
 import LeftSideView from '../Home/LeftSideView.vue';
 import RightSideView from '../Home/RightSideView.vue';
 import Footer from '../../components/Footer.vue';
 
-const toggle = ref (true)
+
+const allReotren = reactive([
+  {
+    className: 'Class name one',
+    toggle: true,
+    classRotine: [
+      {
+        dayName: 'sunday',
+        subjectAndTime: [
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+        ]
+      }
+    ]
+  },
+  {
+    className: 'Class name one',
+    toggle: true,
+    classRotine: [
+      {
+        dayName: 'sunday',
+        subjectAndTime: [
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+        ]
+      }
+    ]
+  },
+  {
+    className: 'Class name one',
+    toggle: true,
+    classRotine: [
+      {
+        dayName: 'sunday',
+        subjectAndTime: [
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+          {
+            name: 'englilsh',
+            time: '11-01'
+          },
+        ]
+      }
+    ]
+  },
+])
+
+
 </script>
 
 <template>
@@ -39,74 +160,37 @@ const toggle = ref (true)
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a class="btn btn-primary btn-block">
-                        <!-- <i class="icon-nav icon-star"></i> --> 
-                        Class class two
-                      </a>
+              <template v-for="(allDetails, index) in allReotren" :key="index">
+                <div class="panel panel-default" >
+                    <div class="panel-heading"  @click="allDetails.toggle = !allDetails.toggle">
+                      <h4 class="panel-title">
+                        <a class="btn btn-primary toggleBtn btn-block w-100 text-capitalize">{{ allDetails.className }}</a>
                       </h4>
                     </div>
-                    <div id="collapse3" class="panel-collapse collapse in">
+                    <div id="collapse3" class="panel-collapse" v-show=" allDetails.toggle == true">
                       <div class="panel-body">
-                        <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered">
-                          <tbody>
+                        <table class="table table-bordered my-2" v-for="(studentRoutine, index) in allDetails.classRotine" :key="index">
+                          <tbody> 
                             <tr class="gradeA">
-                              <td width="100">SATURDAY</td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">SUNDAY</td>
+                              <td width="100" class=" dayNameStyle ">{{ studentRoutine.dayName }}</td>
                               <td>
                                 <div class="btn-group">
-                                  <span class="label label-success">
-                                    English (10-11)
+                                  <span class="label ">
+                                    <div class="row">
+                                        <div class="col-md-3 classRotineGap" v-for="(sobDeatils, index) in studentRoutine.subjectAndTime" :key="index">   
+                                          <button type="button" class="btn btn-warning rotuineDetalis" >{{ sobDeatils.name }} ({{ sobDeatils.time }})</button>
+                                        </div>
+                                    </div>
                                   </span>  
-                                </div>
-                                <div class="btn-group">
-                                  <span class="label label-success">
-                                    English(10-7)
-                                  </span>  
-                                </div>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">MONDAY</td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">TUESDAY</td>
-                              <td>
-                                <div class="btn-group">
-                                  <span class="label label-success">
-                                    English (17-7)
-                                  </span>  
-                                </div>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">WEDNESDAY</td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">THURSDAY</td>
-                              <td>
-                              </td>
-                            </tr>
-                            <tr class="gradeA">
-                              <td width="100">FRIDAY</td>
-                              <td>
+                                </div> 
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
                     </div>
-                  </div>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -126,34 +210,48 @@ const toggle = ref (true)
 .designLine{
   font-size: 3rem;
 }
-body{
-  font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #444;
-    line-height: 26px;
-    background: rgba(0,0,0,0.1) url(../images/header_bg.png);
+
+.toggleBtn{
+  color: black;
+}
+.toggleBtn:hover{
+  color: white;
 }
 .panel-default{
-  border-color: #eee;
+    background: #ffffff;
+    border-radius: 13px;
+    box-shadow: 0px 2px 2px 1px #cacaca78;
+    padding: 4px;
+    margin: 10px 0;
 }
 .panel-default > .panel-heading{
   background-color: #fff;
-    border-color: #eee;
+    border-color: #4ebd55;
 }
 .panel-default > .panel-heading .panel-title{
-  font-size: 14px;
-    font-weight: normal;
+  margin: 0;
 }
 .btn.btn-primary{
   background: #45aed6;
     border-color: #2a95be;
 }
-.btn{
-  border-width: 0;
-    border-bottom-width: 3px;
-    border-radius: 3px;
-}
 .panel-default > .panel-heading + .panel-collapse > .panel-body{
   border-top-color: #eee;
 }
+.classRotineGap{
+  margin: 2px 0;
+}
+.rotuineDetalis{
+  font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 2px 8px;
+}
+.dayNameStyle{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-transform: capitalize;
+  }
+
 </style>
