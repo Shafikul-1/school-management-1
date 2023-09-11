@@ -54,7 +54,7 @@ axios.get(url)
     try {
       const response = await axios.get(url);
       const jsonData = response.data;
-      console.log(jsonData.allreotren);
+      // console.log(jsonData.allreotren);
   
       allData.value = jsonData.allreotren;
       loading.value = false; // Set loading to false once data is received
@@ -63,6 +63,8 @@ axios.get(url)
       console.error('Error fetching data:', error);
     }
   });
+
+  console.log('data => ' + allData)
   </script>
   
   <style scoped>

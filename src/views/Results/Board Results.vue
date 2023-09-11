@@ -1,124 +1,143 @@
 <script setup>
+import { ref, reactive } from 'vue'
 import Slider from '../../components/Slider.vue';
 import Navbar from '../../components/Navbar.vue';
 import LeftSideView from '../Home/LeftSideView.vue';
 import RightSideView from '../Home/RightSideView.vue';
 import Footer from '../../components/Footer.vue';
+import axios from 'axios';
 
-const boarsResultData = [
-  {
-    searchOption: [
-      {
-        name: 'Location',
-        state: 'selected'
-      },
-      {
-        name: 'Boston', 
-      },
-      {
-        name: 'mayanmar', 
-      },
-      {
-        name: 'arob', 
-      },
-      {
-        name: 'Bangladesh', 
-      },
-      {
-        name: 'India', 
-      },
-      {
-        name: 'varot', 
-      }
-    ],
-    sorting: [
-      {
-        name: 'Relevance',
-        value: '1'
-      },
-      {
-        name: 'Names (A-Z)',
-        value: '2'
-      },
-      {
-        name: 'Names (Z-A)',
-        value: '3'
-      },
-      {
-        name: 'Number (1-50)',
-        value: '5'
-      },
-      {
-        name: 'Number (50-100)',
-        value: '4'
-      }
-    ],
-    personDetails: [
-      {
-        image: 'https://img.freepik.com/free-photo/woman-with-long-hair-yellow-hoodie-with-word-music-it_1340-39068.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
-        alt: 'Content',
-        title: 'Man Fast',
-        name: 'Ms Runjila Begum',
-        year: '1 year',
-        institution: 'Chanda High School',
-        grade: 'fast grade',
-        result: {
-          gradeStatus: 'GPA',
-          number: '5.00',
-        },
-        subject: 'scince',
-        studentStatus: 'bg-success'
-      },
-      {
-        image: 'https://bootdey.com/img/Content/avatar/avatar5.png',
-        alt: 'Content',
-        title: 'Second Fast',
-        name: 'md Shaifkul Isalm',
-        year: '1 year',
-        institution: 'bokapur high school',
-        grade: 'second grade',
-        result: {
-          number: '3.76',
-          gradeStatus: 'GPA'
-        },
-        subject: 'scince',
-        studentStatus: 'bg-danger'
-      },
-      {
-        image: 'https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
-        alt: 'Content',
-        title: 'Thred Fast',
-        name: 'Md Hanif Hossain',
-        year: '1 year',
-        institution: 'MohadevPur high school',
-        grade: 'thred grade',
-        result: {
-          number: '5.30',
-          gradeStatus: 'GPA'
-        },
-        subject: 'Humanity',
-        studentStatus: 'bg-warning'
-      },
-      {
-        image: 'https://img.freepik.com/free-photo/fashion-little-boy_71767-95.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
-        alt: 'arif',
-        title: 'Four Man',
-        name: 'Md Arif Hossain',
-        year: '1 year',
-        institution: 'Naogan pailot high school',
-        grade: 'Fast grade',
-        result: {
-          number: '5.30',
-          gradeStatus: 'GPA'
-        },
-        subject: 'Scince',
-        studentStatus: 'bg-success'
-      }
-    ]
+// const boarsResultData = [
+//   {
+//     searchOption: [
+//       {
+//         name: 'Location',
+//         state: 'selected'
+//       },
+//       {
+//         name: 'Boston', 
+//       },
+//       {
+//         name: 'mayanmar', 
+//       },
+//       {
+//         name: 'arob', 
+//       },
+//       {
+//         name: 'Bangladesh', 
+//       },
+//       {
+//         name: 'India', 
+//       },
+//       {
+//         name: 'varot', 
+//       }
+//     ],
+//     sorting: [
+//       {
+//         name: 'Relevance',
+//         value: '1'
+//       },
+//       {
+//         name: 'Names (A-Z)',
+//         value: '2'
+//       },
+//       {
+//         name: 'Names (Z-A)',
+//         value: '3'
+//       },
+//       {
+//         name: 'Number (1-50)',
+//         value: '5'
+//       },
+//       {
+//         name: 'Number (50-100)',
+//         value: '4'
+//       }
+//     ],
+//     personDetails: [
+//       {
+//         image: 'https://img.freepik.com/free-photo/woman-with-long-hair-yellow-hoodie-with-word-music-it_1340-39068.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
+//         alt: 'Content',
+//         title: 'Man Fast',
+//         name: 'Ms Runjila Begum',
+//         year: '1 year',
+//         institution: 'Chanda High School',
+//         grade: 'fast grade',
+//         result: {
+//           gradeStatus: 'GPA',
+//           number: '5.00',
+//         },
+//         subject: 'scince',
+//         studentStatus: 'bg-success'
+//       },
+//       {
+//         image: 'https://bootdey.com/img/Content/avatar/avatar5.png',
+//         alt: 'Content',
+//         title: 'Second Fast',
+//         name: 'md Shaifkul Isalm',
+//         year: '1 year',
+//         institution: 'bokapur high school',
+//         grade: 'second grade',
+//         result: {
+//           number: '3.76',
+//           gradeStatus: 'GPA'
+//         },
+//         subject: 'scince',
+//         studentStatus: 'bg-danger'
+//       },
+//       {
+//         image: 'https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
+//         alt: 'Content',
+//         title: 'Thred Fast',
+//         name: 'Md Hanif Hossain',
+//         year: '1 year',
+//         institution: 'MohadevPur high school',
+//         grade: 'thred grade',
+//         result: {
+//           number: '5.30',
+//           gradeStatus: 'GPA'
+//         },
+//         subject: 'Humanity',
+//         studentStatus: 'bg-warning'
+//       },
+//       {
+//         image: 'https://img.freepik.com/free-photo/fashion-little-boy_71767-95.jpg?size=626&ext=jpg&ga=GA1.2.999761359.1694014498&semt=sph',
+//         alt: 'arif',
+//         title: 'Four Man',
+//         name: 'Md Arif Hossain',
+//         year: '1 year',
+//         institution: 'Naogan pailot high school',
+//         grade: 'Fast grade',
+//         result: {
+//           number: '5.30',
+//           gradeStatus: 'GPA'
+//         },
+//         subject: 'Scince',
+//         studentStatus: 'bg-success'
+//       }
+//     ]
 
-  }
-]
+//   }
+// ]
 
+let alldt = ref([])
+let searchData = ref([])
+let sortData = ref([])
+let loading = ref(true)
+async function board(){
+  let url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/db.json'
+  let res = await axios.get(url)
+  console.log(res.data)
+  alldt.value = res.data.personDetails
+  searchData.value = res.data.searchOption 
+  sortData.value = res.data.sorting 
+  loading.value = false
+}
+board()
+console.log('all alldt =>' + alldt)
+console.log('all searchData =>' + searchData)
+console.log('all sortData =>' + sortData)
 
 </script>
 
@@ -152,7 +171,8 @@ const boarsResultData = [
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <div class="container" v-for="(fullDetalis, index) in boarsResultData" :key="index">
+              <h1 v-if="loading">Loading...</h1>
+              <div class="container">
               <div class="row">
                   <div class="col-lg-12 card-margin">
                       <div class="card search-form">
@@ -164,7 +184,7 @@ const boarsResultData = [
                                             <div class="col-lg-3 col-md-3 col-sm-12 p-0 d-flex seletlocation">
                                                 <i class="fa-solid fa-arrow-down-wide-short arrowIcon"></i>
                                                 <select class="form-control " id="exampleFormControlSelect1">
-                                                  <template v-for="(selectOption, index) in fullDetalis.searchOption" :key="index">
+                                                  <template v-for="(selectOption, index) in searchData" :key="index">
                                                     <option :selected="selectOption.state">{{ selectOption.name }}</option>
                                                   </template>
                                                   </select>
@@ -202,7 +222,7 @@ const boarsResultData = [
                                                               <div class="result-sorting">
                                                                   <span>Sort By:</span>
                                                                   <select class="form-control border-0" id="exampleOption">
-                                                                      <option v-for="(sortValue, index) in fullDetalis.sorting" :key="index" :value="sortValue.value">{{ sortValue.name }}</option>
+                                                                      <option v-for="(sortValue, index) in sortData" :key="index" :value="sortValue.value">{{ sortValue.name }}</option>
                                                                   </select>
                                                               </div>
                                                               <div class="result-views">
@@ -221,7 +241,7 @@ const boarsResultData = [
                                                   <div class="table-responsive">
                                                       <table class="table widget-26">
                                                           <tbody>
-                                                              <tr v-for="(personData, index) in fullDetalis.personDetails" :key="index">
+                                                              <tr v-for="(personData, index) in alldt" :key="index">
                                                                   <td>
                                                                       <div class="widget-26-job-emp-img">
                                                                           <img :src="personData.image" :title="personData.title" :alt="personData.alt" />
