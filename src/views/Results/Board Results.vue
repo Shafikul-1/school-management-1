@@ -430,26 +430,12 @@ body{
   color: #fd8b2c;
 }
 
-.widget-26 .widget-26-job-starred svg.starred {
+.widget-26 .widget-26-job-starred {
   fill: #fd8b2c;
 }
 .bg-soft-base {
   background-color: #e1f5f7;
 }
-.bg-soft-warning {
-    background-color: #fff4e1;
-}
-.bg-soft-success {
-    background-color: #d1f6f2;
-}
-.bg-soft-danger {
-    background-color: #fedce0;
-}
-.bg-soft-info {
-    background-color: #d7efff;
-}
-
-
 .search-form {
   width: 100%;
   margin: 0 auto;
@@ -466,7 +452,6 @@ body{
   height: 100%;
   font-size: 1rem;
 }
-
 .search-form select {
   background: transparent;
   border: 0;
@@ -494,16 +479,16 @@ body{
   margin-bottom: 1.5rem;
 }
 
-.search-body .search-filters .filter-list {
+.search-body   {
   margin-bottom: 1.3rem;
 }
 
-.search-body .search-filters .filter-list .title {
+.search-body{
   color: #3c4142;
   margin-bottom: 1rem;
 }
 
-.search-body .search-filters .filter-list .filter-text {
+.search-body{
   color: #727686;
 }
 
@@ -541,23 +526,16 @@ body{
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .search-body .search-filters {
+  .search-body  {
     display: flex;
   }
-  .search-body .search-filters .filter-list {
+  .search-body   {
     margin-right: 1rem;
   }
 }
 
 .card-margin {
     margin-bottom: 1.875rem;
-}
-
-@media (min-width: 992px){
-.col-lg-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-}
 }
 
 .card-margin {
