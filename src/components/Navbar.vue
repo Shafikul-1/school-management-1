@@ -214,39 +214,46 @@
 </script>
 
 <template>
- <nav class="navbar navbar-expand-lg navbarStyle">
-  <div class="container-fluid">
-    <RouterLink to="/" class="navbar-brand">Bokapur</RouterLink>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown navAllItem" v-for="(navAll, index) in navBar" :key="index">
-            <RouterLink 
-              :to="navAll.link" 
-              data-toggle="dropdown" 
-              :class="navAll.heading.toLocaleLowerCase() == 'home' ? '' : 'dropdown-toggle'" 
-              class="nav-link text-capitalize" 
-              role="button" 
-              :data-bs-toggle="navAll.heading.toLocaleLowerCase() == 'home' ? '' : 'dropdown'"
-              data-bs-toggle="" 
-              aria-expanded="false"
-              >
-                <i :class="navAll.icon" class="iconAndText"></i>{{ navAll.heading }}
-            </RouterLink>
-            <ul class="dropdown-menu">
-              <li v-for="(dropDownitem, index) in navAll.dropDown" :key="index"  class="dropdown-item">
-                <RouterLink :to="dropDownitem.link"  class="nav-link">
-                  <i class="fa fa-angle-right iconAndText"></i>{{ dropDownitem.name }}
-                </RouterLink>
-              </li>
-            </ul>
-        </li>
-      </ul>
-    </div>
+  <div class="w-100">
+    <nav class="sticky-top navbar navbar-expand-lg navbarStyle">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <RouterLink to="/" class="navbar-brand">Bokapur</RouterLink> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown navAllItem" v-for="(navAll, index) in navBar" :key="index">
+                    <RouterLink 
+                      :to="navAll.link" 
+                      data-toggle="dropdown" 
+                      :class="navAll.heading.toLocaleLowerCase() == 'home' ? '' : 'dropdown-toggle'" 
+                      class="nav-link text-capitalize" 
+                      role="button" 
+                      :data-bs-toggle="navAll.heading.toLocaleLowerCase() == 'home' ? '' : 'dropdown'"
+                      data-bs-toggle="" 
+                      aria-expanded="false"
+                      >
+                        <i :class="navAll.icon" class="iconAndText"></i>{{ navAll.heading }}
+                    </RouterLink>
+                    <ul class="dropdown-menu">
+                      <li v-for="(dropDownitem, index) in navAll.dropDown" :key="index"  class="dropdown-item">
+                        <RouterLink :to="dropDownitem.link"  class="nav-link">
+                          <i class="fa fa-angle-right iconAndText"></i>{{ dropDownitem.name }}
+                        </RouterLink>
+                      </li>
+                    </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
+
 </template>
 <style scoped>
 .navAllItem{

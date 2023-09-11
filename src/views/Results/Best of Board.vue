@@ -35,7 +35,10 @@ import Footer from '../../components/Footer.vue';
 <!-- All Work Start -->
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12"></div>
+            <div class="col-md-12">
+              
+
+            </div>
           </div>
         </div>
       </div>
@@ -54,4 +57,7 @@ import Footer from '../../components/Footer.vue';
 .designLine{
   font-size: 3rem;
 }
+
+
+
 </style>
