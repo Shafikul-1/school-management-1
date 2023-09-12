@@ -1,30 +1,5 @@
-<!-- <script setup>
-const axios = require('axios');
 
-const url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/db.json';
-
-axios.get(url)
-  .then(response => {
-    // Handle the JSON data here
-    const jsonData = response.data;
-    console.log(jsonData);
-  })
-  .catch(error => {
-    // Handle errors here
-    console.error('Error fetching data:', error);
-  });
-
-
-</script>
-<template>
-    <h2>Test Page</h2>
-</template>
-
-<style scoped>
-
-</style> -->
-
-
+<!-- 
 <template>
     <div>
       <div class="fas" v-for="(item, index) in allData" :key="index">
@@ -54,7 +29,7 @@ axios.get(url)
     try {
       const response = await axios.get(url);
       const jsonData = response.data;
-      // console.log(jsonData.allreotren);
+      console.log(jsonData);
   
       allData.value = jsonData.allreotren;
       loading.value = false; // Set loading to false once data is received
@@ -78,9 +53,120 @@ axios.get(url)
   }
   </style>
   
+ -->
 
 
-<!-- fetch(url)
-.then(res => res.json())
-.then(result => {console.log(result)})
-.catch(erro => {console.log(erro)}) -->
+ <template>
+  <div>
+    <div style="border: 3px solid;" v-for="(item, index) in displayedItems" :key="index">
+      <code>{{ index }}</code>
+      <h1>{{ item.name }}</h1>
+      <h1>{{ item.second }}</h1>
+    </div>
+    <button @click="showNextItems">Show Next 3</button>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+
+const items = [
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  {
+    name: 'fast',
+    second: 'seconded'
+  },
+  
+  // Add more items here
+];
+// const displayedItems = ref([]);
+// const numberOfItemsToShow = ref(3);
+// const startIndex = ref(0);
+// const showNextItems = () => {
+//   const endIndex = startIndex.value + numberOfItemsToShow.value;
+//   displayedItems.value.push(...items.slice(startIndex.value, endIndex));
+//   startIndex.value = endIndex;
+// };
+
+const numberOfItemsToShow = ref(3);
+const startIndex = ref(0);
+const displayedItems = ref(items.slice(startIndex.value, startIndex.value + numberOfItemsToShow.value));
+const noMoreItems = computed(() => startIndex.value >= items.length);
+
+const showNextItems = () => {
+  const endIndex = startIndex.value + numberOfItemsToShow.value;
+  if (endIndex <= items.length) {
+    displayedItems.value.push(...items.slice(startIndex.value, endIndex));
+    startIndex.value = endIndex;
+  } else {
+    alert('No more items to show');
+  }
+};
+</script>

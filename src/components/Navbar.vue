@@ -215,7 +215,7 @@
 
 <template>
   <div class="w-100">
-    <nav class="sticky-top navbar navbar-expand-lg navbarStyle">
+    <nav class="navbar sticky-top navbar-expand-lg navbarStyle">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
