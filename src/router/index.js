@@ -204,7 +204,7 @@ const router = createRouter({
     {
       path: '/all-news',
       name: 'all-news',
-      component: ()=> import('../components/News Blog.vue')
+      component: ()=> import('../components/NewsBlog.vue')
     },
 
 

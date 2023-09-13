@@ -1,9 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
-import Slider from './Slider.vue'
-import Navbar from './navbar.vue'
-
+import navbar from './navbar.vue';
+import Slider from './Slider.vue';
 const allDetalis = ref([])
 const loading = ref(true)
 const url = 'https://jsonplaceholder.typicode.com/photos'
@@ -28,7 +27,7 @@ const loadingImage = [
 
 <template>
 <Slider/>
-<Navbar/>
+<navbar/>
     <div class="col-md-12" v-if="loading">
         <div class="row">
             <div class="col-md-3 my-3"  v-for="(load, index) in loadingImage" :key="index">
