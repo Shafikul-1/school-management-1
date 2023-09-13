@@ -1,8 +1,8 @@
 <script setup>
-import Slider from './Slider.vue';
-import Navbar from './navbar.vue'
 import { ref, onMounted } from 'vue'
-import axios from 'axios';
+import axios from 'axios'
+import Slider from './Slider.vue'
+import Navbar from './navbar.vue'
 
 const allDetalis = ref([])
 const loading = ref(true)
