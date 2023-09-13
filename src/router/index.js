@@ -206,7 +206,11 @@ const router = createRouter({
       name: 'all-news',
       component: ()=> import('../components/NewsBlog.vue')
     },
-
+    {
+      path: '/all-news/:id',
+      name: 'all-news-all',
+      component: ()=> import('../components/post.vue')
+    },
 
     
     // Test Page
