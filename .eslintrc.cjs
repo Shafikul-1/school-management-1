@@ -11,9 +11,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
-  {
-    env:{
-      node:true
-    }
+  env: {
+    node: true
   }
+  
 }

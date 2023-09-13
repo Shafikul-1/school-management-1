@@ -55,7 +55,7 @@
   
  -->
 
-
+<!-- 
  <template>
   <div>
     <div style="border: 3px solid;" v-for="(item, index) in displayedItems" :key="index">
@@ -169,4 +169,78 @@ const showNextItems = () => {
     alert('No more items to show');
   }
 };
+</script> -->
+
+
+
+
+
+
+
+
+<template>
+  <h2>Test</h2>
+</template>
+
+<script setup>
+const fast = [
+  {
+    fast: 'one',
+    second: 'two',
+    three: {
+      name: 'shafikul',
+      secondName: 'islam'
+    }
+  },
+  {
+    fast: 'one',
+    second: 'two',
+    three: {
+      name: 'shafikul',
+      secondName: 'islam'
+    }
+  },
+  
+  {
+    fast: 'one',
+    second: 'two',
+    three: {
+      name: 'shafikul',
+      secondName: 'islam'
+    }
+  },
+  {
+    fast: 'one',
+    second: 'two',
+    three: {
+      name: 'shafikul',
+      secondName: 'islam'
+    }
+  },
+  {
+    fast: 'one',
+    second: 'two',
+    three: {
+      name: 'shafikul',
+      secondName: 'islam'
+    }
+  },
+
+];
+
+const fastWithIds = [];
+
+for (let i = 0; i < fast.length; i++) {
+  const newItem = {
+    id: i + 1,
+    ...fast[i]
+  };
+  fastWithIds.push(newItem);
+}
+
+console.log(fastWithIds);
 </script>
+
+<style   scoped>
+
+</style>
