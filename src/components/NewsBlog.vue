@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
-import navbar from '../components/navbar.vue';
-import Slider from '../components/Slider.vue';
+// import navbar from '../components/navbar.vue';
+// import Slider from '../components/Slider.vue';
 const allDetalis = ref([])
 const loading = ref(true)
 const url = 'https://jsonplaceholder.typicode.com/photos'
