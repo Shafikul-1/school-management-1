@@ -10,7 +10,7 @@ import Footer from '../../components/Footer.vue';
 </script>
 
 <template>
-   <Slider/>
+<Slider/>
 <Navbar/>
   <div class="container-fluid">
     <div class="row">

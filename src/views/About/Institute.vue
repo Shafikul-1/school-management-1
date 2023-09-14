@@ -1,19 +1,25 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
 import Slider from '../../components/Slider.vue';
 import Navbar from '../../components/Navbar.vue';
 import LeftSideView from '../Home/LeftSideView.vue';
 import RightSideView from '../Home/RightSideView.vue';
 import Footer from '../../components/Footer.vue';
 
-const teamMemberImage = {
-  fast: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_640.jpg',
-  second: 'https://cdn.pixabay.com/photo/2013/05/11/08/28/sunset-110305_640.jpg',
-  thred: 'https://cdn.pixabay.com/photo/2017/02/04/12/25/man-2037255_640.jpg',
-  four: 'https://cdn.pixabay.com/photo/2016/12/30/10/03/dance-1940245_640.jpg',
-  five: 'https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593371_640.jpg',
-  six: 'https://cdn.pixabay.com/photo/2014/11/02/09/15/man-513529_640.jpg',
-  seven: 'https://cdn.pixabay.com/photo/2015/01/27/09/58/man-613601_640.jpg'
-}
+const loading = ref(true)
+const alldata = ref([])
+onMounted(async () => {
+    try {
+        const url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/institutedetalis.json'
+        const response = await axios.get(url)
+        // console.log(response.data)
+        loading.value = false
+        alldata.value = response.data.detalis
+    } catch (error) {
+        console.log(error)
+    }
+})
 </script>
 
 <template>
@@ -45,92 +51,25 @@ const teamMemberImage = {
 
 
 <!-- All Work Start -->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              
-              <div class="container bootstrap snippets bootdeys">
-<div class="row">
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Blue Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+        <div class="container-fluid bootstrap snippets bootdeys">
+            <div class="row">
+                <div class="col-md-12"> 
+                    <div class="col-md-4 col-sm-6 content-card" v-for="(datas, index) in alldata" :key="index">
+                        <div class="card-big-shadow">
+                            <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                                <RouterLink to="/about/institure" class="content">
+                                    <img width="100%" height="3rem" :src="datas.iimage">
+                                    <h6 class="category">{{ datas.subHeading }}</h6>
+                                    <h4 class="title"><a href="#">{{ datas.Heading }}</a></h4>
+                                    <p class="description">{{ datas.paragrape }}</p>
+                                </RouterLink> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-    
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Green Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-    
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Yellow Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-    
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Brown Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-    
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Purple Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-    
-    <div class="col-md-4 col-sm-6 content-card">
-        <div class="card-big-shadow">
-            <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                <div class="content">
-                    <h6 class="category">Best cards</h6>
-                    <h4 class="title"><a href="#">Orange Card</a></h4>
-                    <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                </div>
-            </div> <!-- end card -->
-        </div>
-    </div>
-</div>
-</div>
-
-
             </div>
-          </div>
         </div>
-      </div>
-
+    </div>
 
 
 <!-- Left Side Content -->
@@ -176,7 +115,7 @@ body{margin-top:20px;}
     color: #FFFFFF;
 }
 .card.card-just-text .content {
-    padding: 50px 65px;
+    padding: 6pzx;
     text-align: center;
 }
 .card .content {

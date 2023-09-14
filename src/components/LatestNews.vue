@@ -11,7 +11,7 @@ onMounted(async () => {
         console.log(res.data)
         let jsonData = res.data
         allData.value = jsonData.post.slice(0, 4);
-        // console.log(jsonData.heading)
+        console.log(jsonData)
         heading.value = jsonData.heading
         loading.value = false
     } catch (error) {
