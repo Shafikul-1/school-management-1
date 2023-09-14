@@ -1,100 +1,101 @@
 {
+  "id": 1,
   "allData": [
-  { 
-    "image": "https://randomuser.me/api/portraits/women/21.jpg",
-    "title": "Card title",
-    "subtitle": "subtitle",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",,
-    "linkAll" : [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile"
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  },
-  {
-    "image": "https://randomuser.me/api/portraits/women/28.jpg",
-    "title": "Card title",
-    "subtitle": "Sub title",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "linkAll": [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile",
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  },
-  {
-    "image": "https://randomuser.me/api/portraits/women/77.jpg",
-    "title": "Card title",
-    "subtitle": "",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "linkAll": [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile",
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  },
-  {
-    "image": "https://randomuser.me/api/portraits/women/78.jpg",
-    "title": "Card title",
-    "subtitle": "",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "linkAll": [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile",
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  },
-  {
-    "image": "https://randomuser.me/api/portraits/women/72.jpg",
-    "title": "Card title",
-    "subtitle": "",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "linkAll": [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile",
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  },
-  {
-    "image": "https://randomuser.me/api/portraits/women/38.jpg",
-    "title": "Card title",
-    "subtitle": "",
-    "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "linkAll": [
-      {
-        "linkText": "+8801756867220",
-        "icon": "fa fa-mobile",
-      },
-      {
-        "linkText": "shafikul@gamil.com",
-        "icon": "fa fa-envelope-o"
-      }
-    ]
-  }
-]
+    { 
+      "image": "https://randomuser.me/api/portraits/women/21.jpg",
+      "title": "Card title",
+      "subtitle": "subtitle",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll" : [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    },
+    {
+      "image": "https://randomuser.me/api/portraits/women/28.jpg",
+      "title": "Card title",
+      "subtitle": "Sub title",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll": [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    },
+    {
+      "image": "https://randomuser.me/api/portraits/women/77.jpg",
+      "title": "Card title",
+      "subtitle": "",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll": [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    },
+    {
+      "image": "https://randomuser.me/api/portraits/women/78.jpg",
+      "title": "Card title",
+      "subtitle": "",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll": [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    },
+    {
+      "image": "https://randomuser.me/api/portraits/women/72.jpg",
+      "title": "Card title",
+      "subtitle": "",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll": [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    },
+    {
+      "image": "https://randomuser.me/api/portraits/women/38.jpg",
+      "title": "Card title",
+      "subtitle": "",
+      "detalis": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "linkAll": [
+        {
+          "linkText": "+8801756867220",
+          "icon": "fa fa-mobile"
+        },
+        {
+          "linkText": "shafikul@gamil.com",
+          "icon": "fa fa-envelope-o"
+        }
+      ]
+    }
+  ]
 }
