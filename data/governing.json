@@ -1,4 +1,6 @@
 {
+  "allData": [
+  { 
     "image": "https://randomuser.me/api/portraits/women/21.jpg",
     "title": "Card title",
     "subtitle": "subtitle",
@@ -94,3 +96,5 @@
       }
     ]
   }
+]
+}
