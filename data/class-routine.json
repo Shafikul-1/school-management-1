@@ -1,6 +1,7 @@
 {
     "routine": [
-        {
+          {
+            "id": 1,
             "className": "Class name one",
             "toggle": true,
             "classRotine": [
@@ -40,6 +41,7 @@
             ]
           },
           {
+            "id": 2,
             "className": "Class name one",
             "toggle": false,
             "classRotine": [
@@ -79,6 +81,7 @@
             ]
           },
           {
+            "id":3,
             "className": "Class name one",
             "toggle": false,
             "classRotine": [
