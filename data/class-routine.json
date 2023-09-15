@@ -1,0 +1,121 @@
+{
+    "routine": [
+        {
+            "className": "Class name one",
+            "toggle": true,
+            "classRotine": [
+              {
+                "dayName": "sunday",
+                "subjectAndtime": [
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "className": "Class name one",
+            "toggle": false,
+            "classRotine": [
+              {
+                "dayName": "sunday",
+                "subjectAndtime": [
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "className": "Class name one",
+            "toggle": false,
+            "classRotine": [
+              {
+                "dayName": "sunday",
+                "subjectAndtime": [
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  },
+                  {
+                    "name": "englilsh",
+                    "time": "11-01"
+                  }
+                ]
+              }
+            ]
+          }
+    ]
+}
