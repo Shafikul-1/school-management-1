@@ -1,6 +1,6 @@
 {
     "heading": "fast test heading",
-    "studentResultSheet":  [
+    "ResultAll":  [
             {
             "id" : 1,
             "name": "Md Shafikul Islam",
