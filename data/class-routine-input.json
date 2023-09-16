@@ -1,8 +1,14 @@
 {
-    "weekAndDayName": {
-      "class": "Class Day Name",
-      "week": "Week Day Name"
-    },
+    "weekAndDayName": [
+      {
+        "class": "Class Day Name",
+        "type": "text"
+      },
+      {
+        "class": "Week Day Name",
+        "type": "text" 
+      }
+    ],
     "dynamicSheet" : [
       {
         "id": 1,
