@@ -35,9 +35,16 @@ const router = createRouter({
       component: () => import('../views/Student/ClassResults.vue')
     },
     {
-      path: '/student/class-routine',
+      path: '/student/class-routine/:id?',
       name: 'class-routine', 
-      component: () => import('../views/Student/ClassRoutine.vue')
+      component: () => import('../views/Student/ClassRoutine.vue'),
+      children: [
+        {
+          path: '/student/class-routine/create',
+          name: 'createRoutine',
+          component: ()=> import('../components/ClassRoutineInputFiled.vue')
+        }
+      ]
     },
     {
       path: '/student/entertainment',

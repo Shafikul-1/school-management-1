@@ -66,7 +66,7 @@ const currentDate = new Date()
 
 <style scoped>
 .carosulImageHeight{
-  height: 25rem; 
+  height: 10rem; 
 }
 .currentDate{
   position: absolute;

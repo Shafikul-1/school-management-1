@@ -100,7 +100,7 @@ function removeItem(index) {
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="form-row justify-content-between">
          <div class="input-data">
             <div class="form-row submit-btn">
                <div class="input-data">
@@ -109,8 +109,17 @@ function removeItem(index) {
                </div>
             </div>
           </div>
+          <div class="">
+            <div class="form-row submit-btn">
+               <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="button" value="submit">
+               </div>
+            </div>
+         </div>
       </div>
    </form>
+      
 </div>
 </template>
 
@@ -160,12 +169,11 @@ body {
 }
 .container form .form-row {
    display: flex;
-   margin: 32px 0;
+   margin: 22px 0;
 }
 form .form-row .input-data {
    width: 100%;
-   height: 40px;
-   margin: 0 20px;
+   height: 40px; 
    position: relative;
 }
 form .form-row .textarea {
@@ -285,5 +293,8 @@ form .form-row .textarea {
     border-radius: 6px;
     cursor: pointer;
     margin-left: 30px;
+}
+.extra{
+   display: flex;
 }
 </style>

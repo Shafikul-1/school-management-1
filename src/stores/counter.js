@@ -10,3 +10,4 @@ export const useCounterStore = defineStore('counter', () => {
 
   return { count, doubleCount, increment }
 })
+// const myjson = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/latestNews.json'

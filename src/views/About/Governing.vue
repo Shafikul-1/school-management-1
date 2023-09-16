@@ -162,7 +162,22 @@ onMounted(async () => {
         </div>
 
 <!-- All Work Start -->
-<div class="" v-if="loading">loading....</div>
+<!-- Loading -->
+      <div class="" v-if="loading">
+        <div class="row g-3">
+          <div class="col-md-6">  
+              <span class="placeholder placeholder-glow col-12 rounded bd-h-28"></span>
+              <span class="placeholder placeholder-glow col-12 mt-2"></span>
+              <span class="placeholder placeholder-glow col-7 mt-2"></span>
+          </div>
+          <div class="col-md-6">
+              <span class="placeholder placeholder-glow col-12 rounded-0 bd-h-28"></span>
+              <span class="placeholder placeholder-glow col-12 mt-2"></span>
+              <span class="placeholder placeholder-glow col-7 mt-2"></span>
+          </div> 
+        </div>
+      </div>
+      <!-- Work Start -->
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">

@@ -8,112 +8,210 @@ import Footer from '../../components/Footer.vue';
 <template>
 <Slider/>
 <Navbar class="mb-3"/>
-     <div class="container-fluid administatorBG">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="main-wrapper" class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10">
-                            <div class="card border-0">
-                                <div class="card-body p-0">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-6">
-                                            <div class="p-5">
-                                                <div class="mb-5">
-                                                    <h3 class="h4 font-weight-bold text-theme">Login</h3>
-                                                </div>
 
-                                                <h6 class="h5 mb-0">Welcome back!</h6>
-                                                <p class="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
-
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label for="exampleInputEmail1">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail1">
-                                                    </div>
-                                                    <div class="form-group mb-5">
-                                                        <label for="exampleInputPassword1">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-theme">Login</button>
-                                                    <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 d-none d-lg-inline-block">
-                                            <div class="account-block rounded-right">
-                                                <div class="overlay rounded-right"></div>
-                                                <div class="account-testimonial">
-                                                    <h4 class="text-white mb-4">This  beautiful theme yours!</h4>
-                                                    <p class="lead text-white">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                                                    <p>- Admin User</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- end card-body -->
+<!-- Current Page -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="fastDiv">
+                <div class="secondDiv">
+                    <div class="login-box">
+                        <h2>Login</h2>
+                        <form>
+                            <div class="user-box">
+                                <input type="text" name="" required="">
+                                <label>Username</label>
                             </div>
-                            <!-- end card -->
-
-                            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="register.html" class="text-primary ml-1">register</a></p>
-
-                            <!-- end row -->
-
-                        </div>
-                        <!-- end col -->
+                            <div class="user-box">
+                                <input type="password" name="" required="">
+                                <label>Password</label>
+                            </div>
+                            <RouterLink to="/login/parents" >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                            </RouterLink>
+                        </form>
                     </div>
-                    <!-- Row -->
                 </div>
             </div>
         </div>
-     </div>
+    </div>
+</div>
+
+
+<!-- Footer Part -->
 <Footer/>
 </template>
 <style scoped>
-.administatorBG{
-    padding-top:20px;
-    background: #f6f9fc;
-}
-.account-block {
-    padding: 0;
-    background-image: url(https://bootdey.com/img/Content/bg1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    position: relative;
-}
-.account-block .overlay {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.account-block .account-testimonial {
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    margin: 0 auto;
-    padding: 0 1.75rem;
-    bottom: 3rem;
-    left: 0;
-    right: 0;
+
+.secondDiv {
+  height: 100vh;
+  position: relative; 
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
 }
 
-.text-theme {
-    color: #5369f8 !important;
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
-.btn-theme {
-    background-color: #5369f8;
-    border-color: #5369f8;
-    color: #fff;
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
 </style>
