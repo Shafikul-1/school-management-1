@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, reactive } from 'vue'
+import { useRouter } from 'vue-router';
 import axios from 'axios'
 const outSideData = ref([])
 const url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/input-filed-class-routine.json'
@@ -9,50 +10,48 @@ onMounted(async () => {
    outSideData.value = res.data
 })
 
-// calling function adInputItem then push pushData object
-const adInputItem = ()=>{
-   // object push ouSideData array
-   const pushData = {
-          "id": 1,
+function adInputItem(){
+   outSideData.value[0].dynamicSheet.push(
+      {
+          "id": outSideData.value.length + 1,
           "subject":{
-            "id": 1,
+            "id": outSideData.value.length + 1,
             "type": "text",
             "content": "Subject Name"
           },
           "startTime": {
-            "id": 2,
+            "id": outSideData.value.length + 2,
             "type": "number",
             "content": "Class Start Time"
           },
           "endTime": {
-            "id": 3,
+            "id": outSideData.value.length + 3,
             "type": "number",
             "content": "Class End Time"
           }
         }
-        if (outSideData.value.length > 0) {
-        outSideData.value[0].dynamicSheet.push(pushData)
-      }
+   )
 }
-const removeItem = () => {
-    if (outSideData.value.length > 0) {
-        const dynamicSheet = outSideData.value[0].dynamicSheet
-        if (dynamicSheet.length > 1) {
-            dynamicSheet.pop() // Remove the last item from dynamicSheet
-        }
-    }
-} 
+function removeItem(index){
+   outSideData.value[0].dynamicSheet.splice(index,1)
+}
 
 // Input Value Catch
-const className = ref()
-// const inputValueAll = reactive{
-//    className: classDayName
-// }
+const collectValue = reactive({
+   classDayName:'',
+   weekName: '',
+   subjectName: '',
+   subjectStartTime: '',
+   subjectEndTime: ''
+})
 
+const route = useRouter()
+const submit = () => {
+   alert(collectValue)
+   console.log(collectValue)
+   route.push('/student/class-routine/')
+}
 
-// const submit = () => {
-//    outSideData.value.push()
-// }
 </script>
 
 
@@ -63,38 +62,44 @@ const className = ref()
    </div>
    <form @submit.prevent="submit()" v-for="(inputFiledData, index) in outSideData" :key="index">
 <!-- {{ console.log(inputFiledData.weekAndDayName) }} -->
-      <div class="form-row">
-         <div class="input-data" v-for="basicData in inputFiledData.weekAndDayName" :key="basicData.id">
-            <!-- {{ console.log(basicData) }} -->
-            <input v-model="className" :type="basicData.type" required>
-            <p>{{ className }}</p>
+      <div class="form-row" v-for="basicData in inputFiledData.weekAndDayName" :key="basicData.id">
+
+         <div class="input-data">
+            <input v-model="collectValue.classDayName" :type="basicData.dayName.type" required>
             <div class="underline"></div>
-            <label for="">{{ basicData.class }}</label>
+            <label for="">{{ basicData.dayName.class }}</label>
          </div>
+
+         <div class="input-data">
+            <input v-model="collectValue.weekName" :type="basicData.weekName.type" required>
+            <div class="underline"></div>
+            <label for="">{{ basicData.weekName.class }}</label>
+         </div>
+
       </div>
       
       <div class="border border-3 border-success py-3 px-2 rounded-3 mt-3" v-for="allData in inputFiledData.dynamicSheet" :key="allData.id">
          <!-- {{ console.log(allData.startTime.content) }}
          {{ console.log(allData.startTime.type) }} -->
-         <div class="form-row d-flex justify-content-between">
+       <div class="form-row d-flex justify-content-between">
          <div class="input-data">
-              <input :type="allData.subject.type" required>
+              <input v-model="collectValue.subjectName" :type="allData.subject.type" required>
               <div class="underline"></div>
               <label for="">{{ allData.subject.content }}</label>
           </div>
           <div class="input-data text-end iconAll">
             <i class="fa fa-plus plusIcon" @click="adInputItem()"></i>
-            <i class="fa fa-minus plusIcon" @click="removeItem()"></i>
+            <i class="fa fa-minus plusIcon" @click="removeItem(1)"></i>
           </div>
         </div>
         <div class="form-row">
           <div class="input-data">
-              <input :type="allData.startTime.type" required>
+              <input v-model="collectValue.subjectStartTime" :type="allData.startTime.type" required>
               <div class="underline"></div>
               <label for="">{{ allData.startTime.content }}</label>
           </div>
           <div class="input-data">
-              <input :type="allData.startTime.type" required>
+              <input v-model="collectValue.subjectEndTime" :type="allData.startTime.type" required>
               <div class="underline"></div>
               <label for="">{{ allData.startTime.content }}</label>
           </div>
