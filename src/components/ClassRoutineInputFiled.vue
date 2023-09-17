@@ -1,57 +1,58 @@
 <script setup>
-import { ref } from 'vue'
-const formContent= ref({
-  
-  dynamicSheet : [
-    {
-      id: 1,
-      subject:{
-        id: 1,
-        type: 'text',
-        content: 'Subject Name'
-      },
-      startTime: {
-        id: 2,
-        type: 'number',
-        content: 'Class Start Time'
-      },
-      endTime: {
-        id: 3,
-        type: 'number',
-        content: 'Class End Time'
-      }
-    }
-  ]
+import { ref, onMounted, reactive } from 'vue'
+import axios from 'axios'
+const outSideData = ref([])
+const url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/input-filed-class-routine.json'
+onMounted(async () => {
+   const res = await axios.get(url)
+   // console.log(res.data)
+   outSideData.value = res.data
 })
-function addItem() {
-  // formContent.value.push()
 
-  formContent.value.dynamicSheet.push(
-    {
-    subject: {
-      id: formContent.value.length + 1, // Generate a unique ID
-      type: 'text',
-      content: 'Subject Name'
-    },
-    startTime: {
-      id: formContent.value.length + 2, // Generate a unique ID
-      type: 'number',
-      content: 'Class Start Time'
-    },
-    endTime: {
-      id: formContent.value.length + 3, // Generate a unique ID
-      type: 'number',
-      content: 'Class End Time'
+// calling function adInputItem then push pushData object
+const adInputItem = ()=>{
+   // object push ouSideData array
+   const pushData = {
+          "id": 1,
+          "subject":{
+            "id": 1,
+            "type": "text",
+            "content": "Subject Name"
+          },
+          "startTime": {
+            "id": 2,
+            "type": "number",
+            "content": "Class Start Time"
+          },
+          "endTime": {
+            "id": 3,
+            "type": "number",
+            "content": "Class End Time"
+          }
+        }
+        if (outSideData.value.length > 0) {
+        outSideData.value[0].dynamicSheet.push(pushData)
+      }
+}
+const removeItem = () => {
+    if (outSideData.value.length > 0) {
+        const dynamicSheet = outSideData.value[0].dynamicSheet
+        if (dynamicSheet.length > 1) {
+            dynamicSheet.pop() // Remove the last item from dynamicSheet
+        }
     }
-  }
-  )
-}
+} 
 
-function removeItem(index) {
-  if (formContent.value.dynamicSheet.length > 1) {
-    formContent.value.dynamicSheet.splice(index, 1)
-  }
-}
+// Input Value Catch
+const className = ref()
+// const inputValueAll = reactive{
+//    className: classDayName
+// }
+
+
+// const submit = () => {
+//    outSideData.value.push()
+// }
 </script>
 
 
@@ -60,60 +61,63 @@ function removeItem(index) {
    <div class="text">
     Daily Result Sheet
    </div>
-   <form action="#">
+   <form @submit.prevent="submit()" v-for="(inputFiledData, index) in outSideData" :key="index">
+<!-- {{ console.log(inputFiledData.weekAndDayName) }} -->
       <div class="form-row">
-         <div class="input-data">
-            <input type="text" required>
+         <div class="input-data" v-for="basicData in inputFiledData.weekAndDayName" :key="basicData.id">
+            <!-- {{ console.log(basicData) }} -->
+            <input v-model="className" :type="basicData.type" required>
+            <p>{{ className }}</p>
             <div class="underline"></div>
-            <label for="">Class Day Name</label>
-         </div>
-         <div class="input-data">
-            <input type="text" required>
-            <div class="underline"></div>
-            <label for="">Saptaho Name</label>
+            <label for="">{{ basicData.class }}</label>
          </div>
       </div>
-
-      <div class="border border-3 border-success py-3 px-2 rounded-3 mt-3" v-for="item in formContent.dynamicSheet" :key="item.id">
-        <div class="form-row d-flex justify-content-between">
-          <div class="input-data">
-              <input :type="item.subject.type" required>
+      
+      <div class="border border-3 border-success py-3 px-2 rounded-3 mt-3" v-for="allData in inputFiledData.dynamicSheet" :key="allData.id">
+         <!-- {{ console.log(allData.startTime.content) }}
+         {{ console.log(allData.startTime.type) }} -->
+         <div class="form-row d-flex justify-content-between">
+         <div class="input-data">
+              <input :type="allData.subject.type" required>
               <div class="underline"></div>
-              <label for="">{{ item.subject.content }}</label>
+              <label for="">{{ allData.subject.content }}</label>
           </div>
-          <div class="input-data text-end ">
-            <i class="fa fa-plus plusIcon" @click="addItem()"></i>
-            <i class="fa fa-minus plusIcon" @click="removeItem(1)"></i>
+          <div class="input-data text-end iconAll">
+            <i class="fa fa-plus plusIcon" @click="adInputItem()"></i>
+            <i class="fa fa-minus plusIcon" @click="removeItem()"></i>
           </div>
         </div>
         <div class="form-row">
           <div class="input-data">
-              <input :type="item.startTime.type" required>
+              <input :type="allData.startTime.type" required>
               <div class="underline"></div>
-              <label for="">{{ item.startTime.content }}</label>
+              <label for="">{{ allData.startTime.content }}</label>
           </div>
           <div class="input-data">
-              <input :type="item.endTime.type" required>
+              <input :type="allData.startTime.type" required>
               <div class="underline"></div>
-              <label for="">{{ item.endTime.content }}</label>
+              <label for="">{{ allData.startTime.content }}</label>
           </div>
         </div>
       </div>
 
-      <div class="form-row justify-content-between">
-         <div class="input-data">
+<!-- Duel Button Cencel and submit -->
+      <div class="form-row justify-content-between pb-3">
+         <div class="input-data butttonCenter">
             <div class="form-row submit-btn">
-               <div class="input-data">
+               <div class="input-data rounded-2">
                   <div class="inner"></div>
                   <input type="submit" value="submit">
                </div>
             </div>
-          </div>
-          <div class="">
+         </div>
+         <div class="input-data butttonCenter">
             <div class="form-row submit-btn">
-               <div class="input-data">
+               <div class="input-data rounded-2">
                   <div class="inner"></div>
-                  <input type="button" value="submit">
+                  <RouterLink to="/student/class-routine/" class="text-decoration-none">
+                     <input type="button" value="Cancel">
+                  </RouterLink>
                </div>
             </div>
          </div>
@@ -175,6 +179,7 @@ form .form-row .input-data {
    width: 100%;
    height: 40px; 
    position: relative;
+   padding: 0 5px;
 }
 form .form-row .textarea {
    height: 70px;
@@ -294,7 +299,10 @@ form .form-row .textarea {
     cursor: pointer;
     margin-left: 30px;
 }
-.extra{
-   display: flex;
+.butttonCenter{
+left: 10%;
+}
+.iconAll{
+   top: -20px;
 }
 </style>

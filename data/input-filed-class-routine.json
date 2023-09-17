@@ -3,12 +3,14 @@
       "id":1,
       "weekAndDayName": [
         {
-          "class": "Class Day Name",
-          "type": "text"
-        },
-        {
-          "class": "Week Day Name",
-          "type": "text"
+          "dayName": {
+            "class": "Class Day Name",
+            "type": "text"
+          },
+          "weekName" :{
+            "class": "Week Day Name",
+            "type": "text"
+          }
         }
       ],
       "dynamicSheet" : [

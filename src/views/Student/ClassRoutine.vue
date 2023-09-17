@@ -13,7 +13,7 @@ onMounted( async () => {
   try {
     let url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/class-routine.json'
     let res = await axios.get(url)
-    console.log(res.data)
+    //console.log(res.data)
     allRoutine.value = res.data.routine
     loading.value = false
   } catch (error) {
@@ -56,7 +56,7 @@ onMounted( async () => {
             <i class="fa-solid fa-plus plusIcon"></i>
           </RouterLink>
         </div>
-<!-- All Work Start -->
+<!-- All Work Start --> 
         <!-- Create Component -->
         <div class="container-fluid position-relative">
           <div class="row">

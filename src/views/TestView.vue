@@ -1,4 +1,5 @@
 <script setup>
+import axios from 'axios';
 import { ref } from 'vue'
 const formContent= ref({
   
@@ -52,6 +53,16 @@ function removeItem(index) {
     formContent.value.dynamicSheet.splice(index, 1)
   }
 }
+
+async function names(){
+   try {
+      const url = 'https://raw.githubusercontent.com/Shafikul-1/school-management-1/master/data/class-routine-input.json'
+      const respose = await axios.get(url)
+      console.log(respose.data)
+   } catch (error) {
+      console.log(error)
+   }
+}names()
 </script>
 
 
