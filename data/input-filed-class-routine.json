@@ -4,11 +4,11 @@
       "weekAndDayName": [
         {
           "class": "Class Day Name",
-          "week": "Week Day Name"
+          "type": "text"
         },
         {
-          "class": "Class Day Name",
-          "week": "Week Day Name"
+          "class": "Week Day Name",
+          "type": "text"
         }
       ],
       "dynamicSheet" : [
